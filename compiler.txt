@@ -1,0 +1,29 @@
+
+## 🧠 Compiler
+
+**Definition:**
+A compiler is a **translator** for our code.
+It converts human-readable Go source code into machine code that the computer can execute.
+
+---
+
+## ⚙️ Runtime
+
+**Definition:**
+The runtime is responsible for managing the **execution** of our program — including:
+
+* **Memory allocation**
+* **Garbage collection**
+* **Execution flow**
+
+---
+
+## 🌟 Important Aspects of the Go Language
+
+1. **Compiled language with garbage collection**
+2. **Role of the runtime**
+3. **Garbage collection**
+4. **Concurrency and goroutines**
+5. **Runtime libraries and support**
+6. **Cross-platform compatibility**
+

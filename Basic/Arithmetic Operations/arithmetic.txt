@@ -1,0 +1,15 @@
+1.Basic Arithmetic Operators
+--addition, subtraction, multiplication, division, remainder (modulus %)
+
+2. Operator Precedence
+i) Parentheses()
+ii) multiplication, Division, remainder
+iii) addition, subtraction
+
+3.Overflow
+4.Underflow
+5.Why be mindful of Overflow and Underflow
+--Program stability, Data integrity, Type safety
+
+6. Mitigation Strategies
+--Range checking, type conversion, error handling

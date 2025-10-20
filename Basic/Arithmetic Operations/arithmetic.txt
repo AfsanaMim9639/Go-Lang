@@ -13,3 +13,16 @@ iii) addition, subtraction
 
 6. Mitigation Strategies
 --Range checking, type conversion, error handling
+
+
+
+:= creates the variable
+
+= assigns the value
+
+🧠 You can only use := inside functions (not outside main or package level).
+| Symbol | Meaning          | Used For                 | Example     | Explanation          |
+| ------ | ---------------- | ------------------------ | ----------- | -------------------- |
+| `:=`   | Declare & assign | Variable creation        | `age := 22` | creates new variable |
+| `=`    | Assign           | Change existing variable | `age = 23`  | updates value        |
+| `==`   | Compare          | Check equality           | `age == 23` | true or false        |

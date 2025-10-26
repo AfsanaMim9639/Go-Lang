@@ -1,0 +1,26 @@
+What is a Pointer?
+
+English:
+A pointer is a variable that stores the memory address of another variable.
+Instead of storing a value directly, it points to where the value is stored in memory.
+
+বাংলা:
+Pointer হলো এমন একটি ভেরিয়েবল যা অন্য একটি ভেরিয়েবলের মেমরি অ্যাড্রেস সংরক্ষণ করে।
+এটি সরাসরি মান ধরে না, বরং সেই মান যেখানে রাখা আছে, সেখানে “ইঙ্গিত” করে।
+
+
+var p *int
+p is a pointer to an int type.
+
+The * symbol before the type indicates it’s a pointer.
+
+
+
+| Concept    | English Explanation         | বাংলা ব্যাখ্যা                    |
+| ---------- | --------------------------- | --------------------------------- |
+| Pointer    | Variable storing an address | একটি ভেরিয়েবলের ঠিকানা ধরে রাখে  |
+| `&`        | Address operator            | অ্যাড্রেস বের করতে ব্যবহৃত        |
+| `*`        | Dereference operator        | মান বের করতে ব্যবহৃত              |
+| `nil`      | No memory assigned          | কোনো মেমরি নির্দিষ্ট নয়          |
+| `new()`    | Allocate memory             | নতুন মেমরি তৈরি করে               |
+| Common Use | Modify data, efficiency     | ডেটা পরিবর্তন ও মেমরি ব্যবস্থাপনা |

@@ -1,0 +1,22 @@
+1. What are formatting verbs?
+
+In Go, formatting verbs are special symbols used with fmt.Printf, fmt.Sprintf, etc., to control how values are printed. They define how a variable should be formatted as a string.
+
+fmt.Printf("...%verb...", value)
+
+| Verb  | Description (English)                    | Description (Bengali)          | Example                                                          |
+| ----- | ---------------------------------------- | ------------------------------ | ---------------------------------------------------------------- |
+| `%v`  | Default format of the value              | মানের ডিফল্ট ফরম্যাট           | `fmt.Printf("%v", 42)` → 42                                      |
+| `%+v` | Default format with field names (struct) | struct-এর ক্ষেত্রে ফিল্ড নামসহ | `fmt.Printf("%+v", person)` → `{Name:John Age:30}`               |
+| `%#v` | Go-syntax representation                 | Go সিনট্যাক্সে প্রদর্শন        | `fmt.Printf("%#v", person)` → `main.Person{Name:"John", Age:30}` |
+| `%T`  | Type of the variable                     | ভেরিয়েবলের টাইপ               | `fmt.Printf("%T", 42)` → `int`                                   |
+| `%t`  | Boolean value                            | বুলিয়ান মান                   | `fmt.Printf("%t", true)` → `true`                                |
+| `%d`  | Decimal integer                          | দশমিক সংখ্যা                   | `fmt.Printf("%d", 255)` → 255                                    |
+| `%b`  | Binary                                   | বাইনারি                        | `fmt.Printf("%b", 5)` → 101                                      |
+| `%c`  | Unicode character                        | ইউনিকোড অক্ষর                  | `fmt.Printf("%c", 65)` → A                                       |
+| `%x`  | Hexadecimal                              | হেক্সাডেসিমাল                  | `fmt.Printf("%x", 255)` → ff                                     |
+| `%f`  | Floating point (decimal)                 | দশমিক ফ্লোট                    | `fmt.Printf("%f", 3.14)` → 3.140000                              |
+| `%e`  | Scientific notation                      | বৈজ্ঞানিক নোটেশন               | `fmt.Printf("%e", 3000)` → 3.000000e+03                          |
+| `%s`  | String                                   | স্ট্রিং                        | `fmt.Printf("%s", "Go")` → Go                                    |
+| `%q`  | Double-quoted string                     | ডাবল-কোট স্ট্রিং               | `fmt.Printf("%q", "Go")` → "Go"                                  |
+| `%p`  | Pointer address                          | পয়েন্টারের ঠিকানা             | `fmt.Printf("%p", &x)` → 0xc0000140b0                            |

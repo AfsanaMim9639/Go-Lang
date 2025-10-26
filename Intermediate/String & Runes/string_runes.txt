@@ -1,0 +1,29 @@
+1. String
+
+English Explanation:
+A string in Go is a sequence of bytes. It is immutable, meaning once created, it cannot be changed. Strings can hold text in any encoding, but typically UTF-8 is used.
+
+Bengali Explanation:
+Go-তে string হল বাইটের একটি ধারা। এটি অপরিবর্তনীয়, অর্থাৎ একবার তৈরি হলে পরিবর্তন করা যায় না। সাধারণত UTF-8 এনকোডিং ব্যবহৃত হয়।
+
+
+2. Rune
+
+English Explanation:
+A rune is an alias for int32 and represents a single Unicode code point. It is used when you need to work with individual characters rather than bytes.
+
+Bengali Explanation:
+rune হল int32 এর একটি অ্যালিয়াস এবং এটি একটি Unicode code point উপস্থাপন করে। এটি ব্যবহার করা হয় যখন বাইটের পরিবর্তে নির্দিষ্ট অক্ষর নিয়ে কাজ করতে হয়।
+
+
+
+| Concept          | English Explanation                                          | বাংলা ব্যাখ্যা                                |
+| ---------------- | ------------------------------------------------------------ | --------------------------------------------- |
+| Type             | string                                                       | string                                        |
+| Contents         | Sequence of bytes                                            | বাইটের ধারা                                   |
+| Mutable?         | No                                                           | না                                            |
+| Encoding         | UTF-8 (usually)                                              | সাধারণত UTF-8                                 |
+| Rune             | Alias for int32, represents a Unicode code point             | int32-এর অ্যালিয়াস, ইউনিকোড কোড পয়েন্ট      |
+| Use Case         | Store & manipulate text                                      | টেক্সট সংরক্ষণ ও পরিচালনা                     |
+| When to Use      | When dealing with whole strings                              | সম্পূর্ণ স্ট্রিং নিয়ে কাজ করতে               |
+| When to Use Rune | When processing individual characters (especially non-ASCII) | পৃথক অক্ষর নিয়ে কাজ করতে, বিশেষ করে নন-ASCII |

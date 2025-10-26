@@ -1,0 +1,53 @@
+What is a Map?
+A map is Go's built-in hash table / dictionary data structure. It stores key-value pairs and provides fast lookups, insertions, and deletions. Maps are reference types, like slices.
+
+
+
+
+# 🗺️ Maps vs 🔢 Slices in Go
+
+| **Feature** | **Map** | **Slice** |
+|--------------|----------|-----------|
+| **Order** | Unordered | Ordered |
+| **Access By** | Key | Index |
+| **Lookup Complexity** | O(1) (average) | O(n) (for search) |
+| **Keys / Indices** | Keys must be *comparable* (e.g., string, int) | Integer indices starting from 0 |
+| **Growth** | Automatic (when adding new key-value pairs) | Grows via `append()` |
+| **Initialization** | `make(map[keyType]valueType)` | `make([]type, length, capacity)` |
+| **Nil Behavior** | Reading from nil map gives zero value; writing causes panic | Nil slice can be appended to safely |
+| **Iteration** | Range returns random order | Range preserves element order |
+| **Use Case** | Fast lookups by key | Ordered collections / sequences |
+
+---
+
+### 🧩 Example Code (with Bengali Comments)
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    // 🌐 Map Example (কী দ্বারা অ্যাক্সেস করা যায়)
+    m := map[string]int{"apple": 5, "banana": 10}
+    m["orange"] = 7
+    fmt.Println("Map:", m)
+    fmt.Println("Banana count:", m["banana"])
+
+    // 🔢 Slice Example (ইনডেক্স দ্বারা অ্যাক্সেস করা যায়)
+    s := []int{1, 2, 3}
+    s = append(s, 4)
+    fmt.Println("Slice:", s)
+    fmt.Println("Element at index 2:", s[2])
+}
+
+
+
+*** Important Notes
+
+Maps are not safe for concurrent use. If multiple goroutines access the same map, you need synchronization (use sync.Map or mutexes)
+You cannot take the address of a map element: &myMap["key"] won't compile
+Map values can be any type, including other maps or slices
+
+
+

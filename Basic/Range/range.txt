@@ -1,0 +1,32 @@
+In Go (Golang), the range keyword is used in for-loops to iterate over different data structures such as arrays, slices, maps, strings, and channels.
+
+1. Range with Arrays and Slices
+
+When you use range with an array or slice, it returns two values in each iteration:
+
+index → position of the element
+
+value → the element at that index
+
+
+2.Range with Maps
+
+When iterating over a map, range returns:
+
+key
+
+value
+
+
+3. Range with Strings
+
+When using range with a string, it iterates over Unicode code points (runes).
+
+
+4. Range with Channels
+
+When used with a channel, range iterates over the values received from the channel until it’s closed.
+
+
+
+

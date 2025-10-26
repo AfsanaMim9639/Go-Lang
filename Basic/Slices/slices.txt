@@ -1,0 +1,8 @@
+## What is a Slice?
+A slice is a flexible, dynamic view into an array. Unlike arrays (which have a fixed size), slices can grow and shrink. Think of a slice as a lightweight wrapper around an array that gives you more flexibility.
+Anatomy of a Slice
+## A slice has three components:
+
+1. Pointer: Points to the first element of the underlying array
+2. Length: The number of elements in the slice (accessed with len())
+3. Capacity: The number of elements in the underlying array from the pointer's position (accessed with cap())

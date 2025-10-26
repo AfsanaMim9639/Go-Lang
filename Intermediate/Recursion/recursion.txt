@@ -1,0 +1,10 @@
+What is Recursion?
+
+English:
+Recursion is when a function calls itself to solve a smaller version of the same problem.
+It continues calling itself until it reaches a base case (a stopping condition).
+
+বাংলা:
+Recursion হলো এমন একটি প্রক্রিয়া যেখানে একটি ফাংশন নিজেকেই কল করে,
+সমস্যাটিকে ছোট ছোট ভাগে ভেঙে সমাধান করে।
+এটি চলতে থাকে যতক্ষণ না base case (থামার শর্ত) পূরণ হয়।

@@ -1,0 +1,15 @@
+# 🧠 Closures in Go (Golang)  
+**English + বাংলা Explanation Notes**
+
+---
+
+## 🔹 What is a Closure?
+
+**English:**  
+A closure is a function that references variables from outside its own body.  
+It “remembers” those variables even after the outer function has returned.  
+
+**বাংলা:**  
+Closure হলো এমন একটি ফাংশন যেটি নিজের বাইরের ফাংশনের ভেরিয়েবলগুলোর রেফারেন্স ধরে রাখে।  
+বাইরের ফাংশন শেষ হলেও, Closure সেই ভেরিয়েবলগুলো মনে রাখে।
+

@@ -1,0 +1,2 @@
+String হলো character (অক্ষর) এর একটি sequence (ক্রম)।
+Go তে string ইমিউটেবল (immutable) — অর্থাৎ একবার তৈরি হলে সেটা পরিবর্তন করা যায় না।

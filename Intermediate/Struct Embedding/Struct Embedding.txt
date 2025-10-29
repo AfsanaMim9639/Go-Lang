@@ -1,0 +1,22 @@
+Struct Embedding মানে হলো
+একটি struct-এর ভিতরে অন্য struct-কে এমবেড (অন্তর্ভুক্ত) করা,
+যাতে সেই struct-এর field ও method গুলো inherited-এর মতো ব্যবহার করা যায়।
+
+এটা অনেকটা object-oriented inheritance-এর মতো আচরণ করে,
+কিন্তু Go তে inheritance নেই — তাই struct embedding দিয়ে একই ফলাফল পাওয়া যায়।
+
+| অংশ                                   | ব্যাখ্যা                                                               |
+| ------------------------------------- | ---------------------------------------------------------------------- |
+| `type Person struct {...}`            | মূল struct, যেখানে নাম ও বয়স আছে                                       |
+| `type Employee struct { Person ... }` | এখানে `Person` কে এমবেড করা হয়েছে                                      |
+| `e.name`                              | সরাসরি `Person` এর field অ্যাক্সেস করা যাচ্ছে (e.Person.name না লিখেও) |
+
+
+| বিষয়                   | বর্ণনা                                             | উদাহরণ                            |
+| ---------------------- | -------------------------------------------------- | --------------------------------- |
+| **Basic Embedding**    | এক struct এর মধ্যে আরেক struct রাখা                | `type Employee struct { Person }` |
+| **Access Field**       | Inner struct এর field সরাসরি অ্যাক্সেস             | `e.name`                          |
+| **Access Method**      | Inner struct এর method outer struct দিয়ে অ্যাক্সেস | `e.Speak()`                       |
+| **Override**           | Outer struct এ একই নামের method থাকলে সেটা চালু হয় | `e.Speak()`                       |
+| **Multiple Embedding** | একাধিক struct এমবেড করা যায়                        | `{Person, Address, Contact}`      |
+| **Full Access**        | চাইলে `e.Person.name` এর মতোও অ্যাক্সেস করা যায়    | `e.Person.name`                   |

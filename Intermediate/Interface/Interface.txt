@@ -1,0 +1,27 @@
+Interface কী?
+
+Go-তে interface হলো এমন এক ধরনের type,
+যা behavior (আচরণ) নির্ধারণ করে — কিন্তু implementation নয়।
+
+অর্থাৎ, interface বলে দেয় "কি করতে হবে", কিন্তু "কিভাবে করতে হবে" সেটা struct নির্ধারণ করে।
+
+Interface এর মূল সিনট্যাক্স
+type InterfaceName interface {
+    Method1()
+    Method2(param Type) ReturnType
+}
+
+
+যে struct এই সব method implement করে, সে struct সেই interface implicitly (অর্থাৎ স্বয়ংক্রিয়ভাবে) implement করে।
+
+
+
+ব্যাখ্যা
+
+1.Speaker interface-এ একটি method আছে: Speak()
+
+2.Person ও Robot struct দুটোই Speak() method implement করেছে
+
+3.তাই তারা দুজনেই Speaker interface পূরণ করছে
+
+4.Go তে interface automatically implemented হয় (explicit “implements” লাগে না)

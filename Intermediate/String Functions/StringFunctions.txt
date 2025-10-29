@@ -1,2 +1,24 @@
 String হলো character (অক্ষর) এর একটি sequence (ক্রম)।
 Go তে string ইমিউটেবল (immutable) — অর্থাৎ একবার তৈরি হলে সেটা পরিবর্তন করা যায় না।
+
+| ফাংশন                               | কাজ                                                   | উদাহরণ                                    | আউটপুট                |
+| ----------------------------------- | ----------------------------------------------------- | ----------------------------------------- | --------------------- |
+| `len(str)`                          | স্ট্রিংয়ের দৈর্ঘ্য (অক্ষরের সংখ্যা) বের করে           | `len("Mim")`                              | `3`                   |
+| `strings.ToUpper(str)`              | সব অক্ষর বড় করে                                       | `strings.ToUpper("go")`                   | `"GO"`                |
+| `strings.ToLower(str)`              | সব অক্ষর ছোট করে                                      | `strings.ToLower("HELLO")`                | `"hello"`             |
+| `strings.Title(str)`                | প্রতিটি শব্দের প্রথম অক্ষর বড় করে                     | `strings.Title("hello world")`            | `"Hello World"`       |
+| `strings.TrimSpace(str)`            | স্ট্রিংয়ের শুরু ও শেষে থাকা ফাঁকা জায়গা মুছে দেয়      | `strings.TrimSpace("  Hi  ")`             | `"Hi"`                |
+| `strings.Trim(str, cutset)`         | নির্দিষ্ট অক্ষর মুছে দেয় (দুই পাশ থেকে)               | `strings.Trim("**Hi**", "*")`             | `"Hi"`                |
+| `strings.HasPrefix(str, prefix)`    | স্ট্রিং নির্দিষ্ট শব্দ দিয়ে শুরু হয়েছে কিনা যাচাই করে | `strings.HasPrefix("Golang", "Go")`       | `true`                |
+| `strings.HasSuffix(str, suffix)`    | স্ট্রিং নির্দিষ্ট শব্দে শেষ হয়েছে কিনা যাচাই করে      | `strings.HasSuffix("photo.jpg", ".jpg")`  | `true`                |
+| `strings.Contains(str, substr)`     | নির্দিষ্ট সাবস্ট্রিং আছে কিনা দেখে                    | `strings.Contains("Bangladesh", "desh")`  | `true`                |
+| `strings.Count(str, substr)`        | নির্দিষ্ট সাবস্ট্রিং কয়বার আছে তা গুনে                | `strings.Count("banana", "a")`            | `3`                   |
+| `strings.Repeat(str, n)`            | স্ট্রিং n বার রিপিট করে                               | `strings.Repeat("Hi", 3)`                 | `"HiHiHi"`            |
+| `strings.Replace(str, old, new, n)` | নির্দিষ্ট শব্দ পরিবর্তন করে                           | `strings.Replace("apple", "a", "A", 1)`   | `"Apple"`             |
+| `strings.Split(str, sep)`           | স্ট্রিং ভাগ করে slice বানায়                           | `strings.Split("a,b,c", ",")`             | `["a","b","c"]`       |
+| `strings.Join(slice, sep)`          | slice-এর সব আইটেম একত্রে স্ট্রিং করে                  | `strings.Join([]string{"Go","Lang"},"-")` | `"Go-Lang"`           |
+| `strings.Index(str, substr)`        | সাবস্ট্রিং-এর প্রথম অবস্থান (ইনডেক্স) দেয়             | `strings.Index("golang","lan")`           | `2`                   |
+| `strings.LastIndex(str, substr)`    | সাবস্ট্রিং-এর শেষ অবস্থান দেয়                         | `strings.LastIndex("banana","a")`         | `5`                   |
+| `strings.Compare(a,b)`              | দুইটা স্ট্রিং তুলনা করে (==, <, >)                    | `strings.Compare("A","B")`                | `-1`                  |
+| `strings.EqualFold(a,b)`            | case-insensitive তুলনা করে                            | `strings.EqualFold("Go","go")`            | `true`                |
+| `strings.Fields(str)`               | স্পেস দিয়ে ভাগ করে slice বানায়                        | `strings.Fields("Hi there Go")`           | `["Hi","there","Go"]` |

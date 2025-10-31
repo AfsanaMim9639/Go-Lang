@@ -1,0 +1,27 @@
+Explanation (Bangla)
+
+Open file → os.Open দিয়ে file open করা।
+
+Scan line by line → bufio.Scanner দিয়ে line-wise read করা।
+
+Filter condition → strings.Contains(line, keyword) দিয়ে শুধু সেই line print করা যা keyword ধারণ করে।
+
+Close file → defer file.Close() দিয়ে safe close করা।
+
+Advanced Filtering
+
+Filter multiple keywords
+
+Filter lines starting with a prefix: strings.HasPrefix(line, "Start")
+
+Filter lines ending with suffix: strings.HasSuffix(line, "end")
+
+Use regex: regexp.MatchString(pattern, line)
+
+
+| Use Case               | Function/Method      |
+| ---------------------- | -------------------- |
+| Check substring        | `strings.Contains`   |
+| Check prefix           | `strings.HasPrefix`  |
+| Check suffix           | `strings.HasSuffix`  |
+| Regex pattern matching | `regexp.MatchString` |

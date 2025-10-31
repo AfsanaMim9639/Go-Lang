@@ -1,0 +1,7 @@
+1️⃣ What are Temporary Files/Directories?
+
+.Temporary files = Short-lived files, যেগুলো program চলাকালীন তৈরি হয় এবং পরে মুছে ফেলা হয়।
+
+.Temporary directories = Short-lived directories, সাধারণত temporary data store করার জন্য।
+
+.Go তে standard library এর os এবং io/ioutil (deprecated) / os দিয়ে temporary files handle করা যায়।

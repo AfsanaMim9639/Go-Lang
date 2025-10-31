@@ -1,0 +1,15 @@
+1️⃣ What is embed directive?
+
+Go 1.16 থেকে embed package introduce হয়েছে।
+
+এটি ব্যবহার করে external files বা directories কে compile time এ Go binary এর মধ্যে include করা যায়।
+
+ফলে program run করার সময় সেই file separate রাখতে হয় না।
+
+Use Cases:
+
+--HTML templates, CSS, JS files embed করা
+
+--Config files embed করা
+
+--Small datasets embed করা

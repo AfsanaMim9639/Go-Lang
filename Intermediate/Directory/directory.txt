@@ -1,0 +1,37 @@
+What is a Directory?
+
+Directory হলো folder যেখানে ফাইল বা অন্য folder থাকে।
+
+Go তে directories তৈরি, remove, read বা traverse করা যায় os এবং path/filepath package দিয়ে।
+
+
+| Task                         | Function/Method                   |
+| ---------------------------- | --------------------------------- |
+| Create single directory      | `os.Mkdir("dir", perm)`           |
+| Create nested directories    | `os.MkdirAll("dir/subdir", perm)` |
+| Remove directory             | `os.Remove("dir")`                |
+| Remove directory recursively | `os.RemoveAll("dir")`             |
+| Read directory contents      | `os.ReadDir("dir")`               |
+| Get absolute path            | `filepath.Abs("dir")`             |
+| Traverse recursively         | `filepath.Walk("dir", callback)`  |
+
+
+
+
+1️⃣ Directory Basics
+
+--Directory = Folder যেখানে ফাইল বা অন্য folder থাকে
+
+Go তে directory handle করার জন্য os এবং path/filepath packages ব্যবহার করা হয়
+
+Directory operations include:
+
+.Create
+
+.Remove
+
+.Read contents
+
+.Traverse recursively
+
+.Get absolute path

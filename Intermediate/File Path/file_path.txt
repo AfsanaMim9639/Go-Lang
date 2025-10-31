@@ -1,0 +1,14 @@
+What is a File Path?
+
+File path হলো একটি string যা ফাইল কোথায় আছে তা নির্দেশ করে।
+
+Go তে file open, read, write করার জন্য path দরকার।
+
+Two Types of Paths
+
+1. Relative Path
+
+--Current working directory থেকে relative।
+2.Absolute Path
+
+--পুরো directory structure উল্লেখ করা হয়।

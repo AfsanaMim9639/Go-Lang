@@ -1,0 +1,127 @@
+১️⃣ Hashing (একমুখী হ্যাশ)
+
+হ্যাশিং হলো এমন একটি প্রক্রিয়া যেখানে যেকোনো ডেটা (string, file ইত্যাদি) থেকে fixed-length output (hash) তৈরি করা হয়।
+
+একবার হ্যাশ করা হলে original data ফিরে আনা যায় না।
+
+উদাহরণ: SHA-256 হ্যাশ
+
+data := "Hello, Go!"
+hash := sha256.Sum256([]byte(data))
+
+
+ব্যাখ্যা:
+
+"Hello, Go!" কে আমরা sha256.Sum256 ফাংশনের মাধ্যমে হ্যাশ করি
+
+ফলাফল একটি 64-character long hex string হবে
+
+এই hash unique (প্রায়) — data একটু পরিবর্তন করলে hash পুরোপুরি পরিবর্তিত হয়
+
+
+
+
+২️⃣ HMAC (Message Authentication Code)
+
+HMAC ব্যবহার হয় ডেটার integrity ও authenticity verify করতে
+
+অর্থাৎ, data পরিবর্তন হয়নি এবং trusted source থেকে এসেছে কিনা যাচাই করা
+
+key := []byte("mysecretkey")
+message := []byte("Hello, Go!")
+
+h := hmac.New(sha256.New, key)
+h.Write(message)
+signature := h.Sum(nil)
+
+
+ব্যাখ্যা:
+
+key হলো secret key, যা শুধুমাত্র sender ও receiver জানে
+
+message হলো আসল ডেটা
+
+hmac.New combined করে hash + key → signature তৈরি করে
+
+যেকোনো পরিবর্তিত message হলে signature মিলবে না
+
+
+
+৩️⃣ Password Hashing (bcrypt)
+
+সাধারণ hash (SHA256) password এর জন্য নিরাপদ নয়, কারণ এটি fast → brute force attack সহজ
+
+তাই bcrypt ব্যবহার করা হয়, যা slow hash তৈরি করে
+
+password := []byte("mySuperSecretPassword")
+hash, _ := bcrypt.GenerateFromPassword(password, bcrypt.DefaultCost)
+
+
+ব্যাখ্যা:
+
+GenerateFromPassword password কে hash করে রাখে
+
+ডাটাবেজে শুধু hash সংরক্ষণ করি, password নয়
+
+Login-এর সময় CompareHashAndPassword দিয়ে verify করি
+
+
+
+৪️⃣ Other Crypto Utilities
+
+crypto/aes → Data encrypt/decrypt
+
+crypto/rand → Secure random number generate
+
+crypto/rsa → Public/private key encryption
+
+crypto/ecdsa → Digital signature
+
+
+| কাজ                        | কীভাবে হয়                               |
+| -------------------------- | --------------------------------------- |
+| Hashing                    | ডেটা → fixed-length hash                |
+| HMAC                       | Data + secret key → verify authenticity |
+| Password hashing           | bcrypt → slow & secure hash             |
+| Symmetric encryption       | AES, block cipher                       |
+| Asymmetric encryption/sign | RSA, ECDSA                              |
+| Secure random numbers      | crypto/rand                             |
+
+
+crypto package in Go
+
+Go তে crypto হলো standard library package, যা cryptography সম্পর্কিত সব কিছু handle করে।
+
+অর্থাৎ, data secure করার জন্য যা যা দরকার: hashing, encryption, digital signatures, random numbers, সব কিছুতেই crypto package এর sub-packages ব্যবহার হয়।
+
+🔹 crypto এর মূল কাজগুলো
+
+Hashing:
+
+ডেটাকে fixed-length hash এ রূপান্তর করা
+
+উদাহরণ: crypto/sha256, crypto/md5
+
+HMAC (Message Authentication):
+
+Data + secret key দিয়ে authenticity verify করা
+
+উদাহরণ: crypto/hmac
+
+Encryption & Decryption:
+
+Symmetric (AES) বা Asymmetric (RSA) encryption
+
+উদাহরণ: crypto/aes, crypto/rsa
+
+Digital Signatures:
+
+Message/Document sign এবং verify করা
+
+উদাহরণ: crypto/ecdsa, crypto/rsa
+
+Secure Random Numbers:
+
+Cryptographically secure random number generate করা
+
+উদাহরণ: crypto/rand

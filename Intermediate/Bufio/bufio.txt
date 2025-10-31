@@ -1,0 +1,88 @@
+=============bufio Package in Go================
+bufio is a standard library package in Go that provides buffered I/O operations. It wraps an io.Reader or io.Writer object, creating another object that implements the interface but provides buffering and some additional functionality for textual I/O.
+2.Why Use bufio?
+Buffered I/O improves performance by reducing the number of system calls. Instead of reading or writing one byte at a time, bufio reads/writes chunks of data into/from a buffer, making operations much more efficient.
+Main Types
+1. bufio.Reader
+Used for buffered reading operations.
+Creating a Reader:
+goreader := bufio.NewReader(os.Stdin)
+// or with custom buffer size
+reader := bufio.NewReaderSize(os.Stdin, 4096)
+Common Methods:
+
+            Read(p []byte) - reads data into p
+            ReadByte() - reads a single byte
+            ReadRune() - reads a single UTF-8 encoded Unicode character
+            ReadString(delim byte) - reads until delimiter (includes delimiter)
+            ReadLine() - reads a line (low-level, usually ReadString is preferred)
+            ReadBytes(delim byte) - like ReadString but returns []byte
+            Peek(n int) - returns next n bytes without advancing the reader
+            Discard(n int) - skips next n bytes
+
+2. bufio.Writer
+Used for buffered writing operations.
+Creating a Writer:
+gowriter := bufio.NewWriter(os.Stdout)
+// or with custom buffer size
+writer := bufio.NewWriterSize(os.Stdout, 4096)
+Common Methods:
+
+            Write(p []byte) - writes data
+            WriteByte(c byte) - writes a single byte
+            WriteRune(r rune) - writes a single Unicode character
+            WriteString(s string) - writes a string
+            Flush() - writes any buffered data to the underlying writer (important!)
+            Available() - returns buffer space available
+            Buffered() - returns number of bytes in the buffer
+
+3. bufio.Scanner
+Provides a convenient interface for reading data, particularly useful for reading line-by-line or token-by-token.
+Creating a Scanner:
+goscanner := bufio.NewScanner(os.Stdin)
+Common Methods:
+
+            Scan() - advances to next token, returns false when done
+            Text() - returns current token as string
+            Bytes() - returns current token as []byte
+            Err() - returns first non-EOF error encountered
+            Split(split SplitFunc) - sets the split function
+
+Built-in Split Functions:
+
+            ScanLines (default) - splits on newlines
+            ScanWords - splits on whitespace
+            ScanRunes - splits on UTF-8 runes
+            ScanBytes - splits on bytes
+
+4. bufio.ReadWriter
+Combines a Reader and Writer, providing both buffered reading and writing.
+gorw := bufio.NewReadWriter(reader, writer)
+Practical Examples
+Reading line by line with Scanner:
+goscanner := bufio.NewScanner(os.Stdin)
+for scanner.Scan() {
+    line := scanner.Text()
+    fmt.Println("You entered:", line)
+}
+if err := scanner.Err(); err != nil {
+    log.Fatal(err)
+}
+Reading with Reader:
+goreader := bufio.NewReader(os.Stdin)
+text, err := reader.ReadString('\n')
+if err != nil {
+    log.Fatal(err)
+}
+fmt.Println(text)
+Writing with Writer:
+gowriter := bufio.NewWriter(os.Stdout)
+writer.WriteString("Hello, ")
+writer.WriteString("World!\n")
+writer.Flush() // Don't forget to flush!
+Important Considerations
+Always Flush Writers: When using bufio.Writer, you must call Flush() to ensure all buffered data is written to the underlying writer. Deferred flush is common:
+gowriter := bufio.NewWriter(file)
+defer writer.Flush()
+Scanner Token Size Limit: By default, Scanner has a maximum token size (64KB). For larger tokens, you need to provide a custom buffer with scanner.Buffer().
+Error Handling: Always check for errors, especially with Scanner using scanner.Err() after the loop.

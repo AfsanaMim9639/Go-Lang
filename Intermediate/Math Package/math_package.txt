@@ -1,0 +1,36 @@
+2. Constants
+| Constant       | Value              | Description       |
+| -------------- | ------------------ | ----------------- |
+| `math.Pi`      | 3.141592653589793  | π (pi)            |
+| `math.E`       | 2.718281828459045  | Euler's number    |
+| `math.Sqrt2`   | 1.4142135623730951 | √2                |
+| `math.Inf(1)`  | +∞                 | Positive infinity |
+| `math.Inf(-1)` | -∞                 | Negative infinity |
+| `math.NaN()`   | NaN                | Not-a-number      |
+
+
+3.Basic Functions
+| Function         | Description                | Example                   |
+| ---------------- | -------------------------- | ------------------------- |
+| `math.Abs(x)`    | Absolute value             | `math.Abs(-5)` → 5        |
+| `math.Pow(x, y)` | x raised to the power y    | `math.Pow(2,3)` → 8       |
+| `math.Sqrt(x)`   | Square root                | `math.Sqrt(16)` → 4       |
+| `math.Cbrt(x)`   | Cube root                  | `math.Cbrt(27)` → 3       |
+| `math.Exp(x)`    | e^x                        | `math.Exp(1)` → 2.718...  |
+| `math.Log(x)`    | Natural logarithm (ln)     | `math.Log(math.E)` → 1    |
+| `math.Log10(x)`  | Base-10 logarithm          | `math.Log10(100)` → 2     |
+| `math.Sin(x)`    | Sine (x in radians)        | `math.Sin(math.Pi/2)` → 1 |
+| `math.Cos(x)`    | Cosine (x in radians)      | `math.Cos(0)` → 1         |
+| `math.Tan(x)`    | Tangent (x in radians)     | `math.Tan(math.Pi/4)` → 1 |
+| `math.Asin(x)`   | Arc sine (returns radians) | `math.Asin(1)` → π/2      |
+| `math.Acos(x)`   | Arc cosine                 | `math.Acos(1)` → 0        |
+| `math.Atan(x)`   | Arc tangent                | `math.Atan(1)` → π/4      |
+| `math.Floor(x)`  | Largest integer ≤ x        | `math.Floor(3.7)` → 3     |
+| `math.Ceil(x)`   | Smallest integer ≥ x       | `math.Ceil(3.2)` → 4      |
+| `math.Round(x)`  | Nearest integer            | `math.Round(3.5)` → 4     |
+| `math.Mod(x, y)` | Remainder of x / y         | `math.Mod(5,2)` → 1       |
+| `math.Max(a,b)`  | Maximum of two numbers     | `math.Max(5,10)` → 10     |
+| `math.Min(a,b)`  | Minimum of two numbers     | `math.Min(5,10)` → 5      |
+
+
+
